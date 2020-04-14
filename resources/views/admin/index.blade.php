@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<link rel="stylesheet" href="{{ url(mix('backend/assets/css/reset.css')) }}"/>
+    <link rel="stylesheet" href="{{ url(mix('backend/assets/css/reset.css')) }}"/>
     <link rel="stylesheet" href="{{ url(mix('backend/assets/css/boot.css')) }}"/>
     <link rel="stylesheet" href="{{ url(mix('backend/assets/css/login.css')) }}"/>
     <link rel="icon" type="image/png" href="backend/assets/images/favicon.png"/>
