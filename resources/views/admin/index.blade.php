@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <link rel="stylesheet" href="assets/css/reset.css"/>
-    <link rel="stylesheet" href="assets/css/boot.css"/>
-    <link rel="stylesheet" href="assets/css/login.css"/>
-    <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+<link rel="stylesheet" href="{{ url(mix('backend/assets/css/reset.css')) }}"/>
+    <link rel="stylesheet" href="{{ url(mix('backend/assets/css/boot.css')) }}"/>
+    <link rel="stylesheet" href="{{ url(mix('backend/assets/css/login.css')) }}"/>
+    <link rel="icon" type="image/png" href="backend/assets/images/favicon.png"/>
 
     <title>UpAdmin - Site Control</title>
 </head>
@@ -54,7 +54,8 @@
 
 </div>
 
-<script src="assets/js/jquery.min.js"></script>
+<script src="{{ url(mix('backend/assets/js/jquery.js')) }}"></script>
+<script src="{{ url(mix('backend/assets/js/login.js')) }}"></script>
 
 </body>
 </html>
