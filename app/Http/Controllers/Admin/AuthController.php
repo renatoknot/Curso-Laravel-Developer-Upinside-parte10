@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -20,9 +22,26 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         if (in_array('', $request->only('email', 'password'))) {
-            $json['message'] = 'Ops, informe todos os dados para efetuar o login.';
+            $json['message'] = $this->message->error('Ooops, informe todos os dados para efetuar o login.')->render();
             return response()->json($json);
         }
-        dump($request->all());
+
+        if (!filter_var($request->email, FILTER_VALIDATE_EMAIL)) {
+            $json['message'] = $this->message->error('Ooops, informe um e-mail válido.')->render();
+            return response()->json($json);
+        }
+
+        $credentials = [
+            'email' => $request->email,
+            'password' => $request->password
+        ];
+
+        if (!Auth::attempt($credentials)) {
+            $json['message'] = $this->message->error('Ooops, usuário e/ou senha não conferem.')->render();
+            return response()->json($json);
+        }
+
+        $json['redirect'] = route('admin.home');
+        return response()->json($json);
     }
 }
