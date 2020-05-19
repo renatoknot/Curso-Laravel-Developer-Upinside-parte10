@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="{{ url(mix('backend/assets/css/libs.css')) }}">
     <link rel="stylesheet" href="{{ url(mix('backend/assets/css/boot.css')) }}"/>
     <link rel="stylesheet" href="{{ url(mix('backend/assets/css/style.css')) }}"/>
+
+    @hasSection ('css')
+        @yield('css')
+    @endif
+
     <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -91,6 +96,10 @@
 <script src="{{ url(mix('backend/assets/js/jquery.js')) }}"></script>
 <script src="{{ url(mix('backend/assets/js/libs.js')) }}"></script>
 <script src="{{ url(mix('backend/assets/js/scripts.js')) }}"></script>
+
+@hasSection ('js')
+    @yield('js')
+@endif
 
 </body>
 </html>
