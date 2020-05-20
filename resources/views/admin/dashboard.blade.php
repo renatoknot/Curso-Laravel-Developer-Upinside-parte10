@@ -140,7 +140,3 @@
         </section>
     </div>
 @endsection
-
-@section('js')
-    <script>alert('teste')</script>
-@endsection
